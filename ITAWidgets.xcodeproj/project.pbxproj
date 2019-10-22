@@ -12,6 +12,11 @@
 		382FC0C62331281900709517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382FC0C42331281900709517 /* Main.storyboard */; };
 		382FC0C82331281A00709517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382FC0C72331281A00709517 /* Assets.xcassets */; };
 		382FC0CB2331281A00709517 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382FC0C92331281A00709517 /* LaunchScreen.storyboard */; };
+		382FC0D423312AB000709517 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382FC0D323312AB000709517 /* FormView.swift */; };
+		387D3D172358A34E00E96E23 /* FormViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3D162358A34E00E96E23 /* FormViewUtils.swift */; };
+		387D3D192358E9D200E96E23 /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3D182358E9D200E96E23 /* UserHeader.swift */; };
+		38838D4C23327388000704F0 /* FormInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38838D4B23327388000704F0 /* FormInputView.swift */; };
+		38838D50233285DC000704F0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38838D4F233285DC000704F0 /* ViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		382FC0C72331281A00709517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382FC0CA2331281A00709517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382FC0CC2331281A00709517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		382FC0D323312AB000709517 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		387D3D162358A34E00E96E23 /* FormViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewUtils.swift; sourceTree = "<group>"; };
+		387D3D182358E9D200E96E23 /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
+		38838D4B23327388000704F0 /* FormInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputView.swift; sourceTree = "<group>"; };
+		38838D4F233285DC000704F0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		382FC0BF2331281900709517 /* ITAWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				382FC0D223312A9600709517 /* Components */,
 				382FC0C02331281900709517 /* AppDelegate.swift */,
 				382FC0C22331281900709517 /* ViewController.swift */,
 				382FC0C42331281900709517 /* Main.storyboard */,
@@ -62,6 +73,18 @@
 				382FC0CC2331281A00709517 /* Info.plist */,
 			);
 			path = ITAWidgets;
+			sourceTree = "<group>";
+		};
+		382FC0D223312A9600709517 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				382FC0D323312AB000709517 /* FormView.swift */,
+				387D3D162358A34E00E96E23 /* FormViewUtils.swift */,
+				38838D4F233285DC000704F0 /* ViewExtension.swift */,
+				38838D4B23327388000704F0 /* FormInputView.swift */,
+				387D3D182358E9D200E96E23 /* UserHeader.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387D3D172358A34E00E96E23 /* FormViewUtils.swift in Sources */,
+				382FC0D423312AB000709517 /* FormView.swift in Sources */,
+				38838D4C23327388000704F0 /* FormInputView.swift in Sources */,
 				382FC0C32331281900709517 /* ViewController.swift in Sources */,
 				382FC0C12331281900709517 /* AppDelegate.swift in Sources */,
+				38838D50233285DC000704F0 /* ViewExtension.swift in Sources */,
+				387D3D192358E9D200E96E23 /* UserHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
