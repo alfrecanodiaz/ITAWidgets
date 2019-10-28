@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3807FE33235F46E5008032B2 /* FormSelectedOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3807FE32235F46E5008032B2 /* FormSelectedOptionView.swift */; };
 		382FC0C12331281900709517 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382FC0C02331281900709517 /* AppDelegate.swift */; };
 		382FC0C32331281900709517 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382FC0C22331281900709517 /* ViewController.swift */; };
 		382FC0C62331281900709517 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382FC0C42331281900709517 /* Main.storyboard */; };
@@ -17,9 +18,11 @@
 		387D3D192358E9D200E96E23 /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3D182358E9D200E96E23 /* UserHeader.swift */; };
 		38838D4C23327388000704F0 /* FormInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38838D4B23327388000704F0 /* FormInputView.swift */; };
 		38838D50233285DC000704F0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38838D4F233285DC000704F0 /* ViewExtension.swift */; };
+		38D14EDF2363869F009C12A0 /* FormBaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D14EDE2363869F009C12A0 /* FormBaseInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3807FE32235F46E5008032B2 /* FormSelectedOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSelectedOptionView.swift; sourceTree = "<group>"; };
 		382FC0BD2331281900709517 /* ITAWidgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITAWidgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		382FC0C02331281900709517 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		382FC0C22331281900709517 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		387D3D182358E9D200E96E23 /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
 		38838D4B23327388000704F0 /* FormInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputView.swift; sourceTree = "<group>"; };
 		38838D4F233285DC000704F0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		38D14EDE2363869F009C12A0 /* FormBaseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBaseInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +82,31 @@
 		382FC0D223312A9600709517 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				38D14EDA23638654009C12A0 /* View */,
+				38D14EDB2363865F009C12A0 /* Elements */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		38D14EDA23638654009C12A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				382FC0D323312AB000709517 /* FormView.swift */,
 				387D3D162358A34E00E96E23 /* FormViewUtils.swift */,
 				38838D4F233285DC000704F0 /* ViewExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		38D14EDB2363865F009C12A0 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
 				38838D4B23327388000704F0 /* FormInputView.swift */,
 				387D3D182358E9D200E96E23 /* UserHeader.swift */,
+				3807FE32235F46E5008032B2 /* FormSelectedOptionView.swift */,
+				38D14EDE2363869F009C12A0 /* FormBaseInputView.swift */,
 			);
-			path = Components;
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,12 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3807FE33235F46E5008032B2 /* FormSelectedOptionView.swift in Sources */,
 				387D3D172358A34E00E96E23 /* FormViewUtils.swift in Sources */,
 				382FC0D423312AB000709517 /* FormView.swift in Sources */,
 				38838D4C23327388000704F0 /* FormInputView.swift in Sources */,
 				382FC0C32331281900709517 /* ViewController.swift in Sources */,
 				382FC0C12331281900709517 /* AppDelegate.swift in Sources */,
 				38838D50233285DC000704F0 /* ViewExtension.swift in Sources */,
+				38D14EDF2363869F009C12A0 /* FormBaseInputView.swift in Sources */,
 				387D3D192358E9D200E96E23 /* UserHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

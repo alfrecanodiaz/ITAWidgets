@@ -1,24 +1,15 @@
 //
-//  FormInputView.swift
+//  FormSelectedOptionView.swift
 //  ITAWidgets
 //
-//  Created by Alfredo on 9/18/19.
+//  Created by Alfredo on 10/22/19.
 //  Copyright © 2019 Itaú. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class FormInputView: UIView {
-    
-    lazy var labelTitle: UILabel = {
-        /// create label
-        let label = UILabel()
-        label.textColor = .gray
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.font = UIFont.systemFont(ofSize: 14)
-        return label
-    }()
+class FormSelectedOptionView: FormBaseInputView {
     
     lazy var userHeader: UserHeader = {
         /// create header
@@ -36,30 +27,47 @@ class FormInputView: UIView {
         return label
     }()
     
-    lazy var action: UIButton = {
-        /// create button
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 48, height: 48))
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
-        button.setTitleColor(.orange, for: .normal)
-        return button
-    }()
-    
-    var border: UIView?
     private var info: [UILabel] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        /// setup
-        self.setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        /// setup
-        self.setup()
     }
     
-    private func setup() {
+    func setup(model: Any? = nil) {
+        if let model = model {
+            self.setupWithModel(model)
+        } else {
+            self.setupWithoutModel()
+        }
+    }
+    
+    private func setupWithoutModel() {
+        self.addBottomBorder(color: .gray)
+        
+        /// add title label to superview
+        self.addSubview(self.labelTitle)
+        self.labelTitle.layout.pinLeadingToSuperview(constant: 0)
+        self.labelTitle.layout.pinTrailingToSuperview(constant: 0)
+        self.labelTitle.layout.pinTopToSuperview(constant: 0)
+        
+        /// add action button to superview
+        self.addSubview(self.action)
+        self.action.layout.centerVertically()
+        self.action.layout.pinTrailingToSuperview(constant: 0)
+        
+        self.border = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 1))
+        self.border?.backgroundColor = .clear
+        
+        self.addSubview(self.border!)
+        
+        self.addBorder(pinTopToView: self.labelTitle, withMargin: 40)
+    }
+    
+    private func setupWithModel(_ model: Any) {
         self.addBottomBorder(color: .gray)
         
         /// add title label to superview
@@ -81,25 +89,26 @@ class FormInputView: UIView {
         
         /// add action button to superview
         self.addSubview(self.action)
-        self.action.layout.centerVertically()
+        self.action.layout.pinTopToSuperview(constant: 20)
         self.action.layout.pinTrailingToSuperview(constant: 0)
         
-        /// add border
-        self.addBorder()
+        /// add bottom border
+        self.addBorder(pinTopToView: self.info.isEmpty ? self.userHeader : self.info.last!, withMargin: 16)
     }
     
     func addInfo(text: String, withLineBreak: Bool = false, bold: Bool = false) {
         /// create label
         let label = UILabel()
-        label.textColor = .gray
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.text = text
         
         if bold {
             label.font = UIFont.boldSystemFont(ofSize: 14)
+            label.textColor = .black
         } else {
             label.font = UIFont.systemFont(ofSize: 14)
+            label.textColor = .gray
         }
         
         self.addSubview(label)
@@ -114,29 +123,9 @@ class FormInputView: UIView {
         label.layout.pinTrailingToSuperview(constant: 48)
         
         self.info.append(label)
-        self.rearrangeBorder()
-    }
-    
-    private func addBorder() {
-        self.border = UIView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 1))
-        self.border?.backgroundColor = .clear
         
-        self.addSubview(self.border!)
-        
-        self.border?.layout.pinLeadingToSuperview(constant: 0)
-        self.border?.layout.pinTrailingToSuperview(constant: 0)
-        
-        if self.info.isEmpty {
-            self.border?.layout.pinTopToView(view: self.userHeader, constant: 16)
-        } else {
-            self.border?.layout.pinTopToView(view: self.info.last!, constant: 16)
-        }
-        
-        self.border?.layout.pinBottomToSuperview(constant: 0)
-    }
-    
-    private func rearrangeBorder() {
+        /// rearrangeBorder
         self.border?.removeFromSuperview()
-        self.addBorder()
+        self.addBorder(pinTopToView: self.info.isEmpty ? self.userHeader : self.info.last!, withMargin: 16)
     }
 }
