@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FormSelectedOptionView: FormBaseInputView {
+class FormSelectedOptionView: FormBaseView {
     
     lazy var userHeader: UserHeader = {
         /// create header
@@ -29,15 +29,10 @@ class FormSelectedOptionView: FormBaseInputView {
     
     private var info: [UILabel] = []
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    func setup(model: Any? = nil) {
+    convenience public init(model: Any?) {
+        self.init(frame: CGRect.zero)
+        
+        /// setup view
         if let model = model {
             self.setupWithModel(model)
         } else {
@@ -45,9 +40,16 @@ class FormSelectedOptionView: FormBaseInputView {
         }
     }
     
+    private override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     private func setupWithoutModel() {
-        self.addBottomBorder(color: .gray)
-        
         /// add title label to superview
         self.addSubview(self.labelTitle)
         self.labelTitle.layout.pinLeadingToSuperview(constant: 0)
@@ -68,8 +70,6 @@ class FormSelectedOptionView: FormBaseInputView {
     }
     
     private func setupWithModel(_ model: Any) {
-        self.addBottomBorder(color: .gray)
-        
         /// add title label to superview
         self.addSubview(self.labelTitle)
         self.labelTitle.layout.pinLeadingToSuperview(constant: 0)
@@ -96,7 +96,7 @@ class FormSelectedOptionView: FormBaseInputView {
         self.addBorder(pinTopToView: self.info.isEmpty ? self.userHeader : self.info.last!, withMargin: 16)
     }
     
-    func addInfo(text: String, withLineBreak: Bool = false, bold: Bool = false) {
+    func addInfo(_ text: String, withLineBreak: Bool = false, bold: Bool = false) {
         /// create label
         let label = UILabel()
         label.numberOfLines = 0

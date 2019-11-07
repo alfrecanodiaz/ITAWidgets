@@ -14,11 +14,13 @@
 		382FC0C82331281A00709517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382FC0C72331281A00709517 /* Assets.xcassets */; };
 		382FC0CB2331281A00709517 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382FC0C92331281A00709517 /* LaunchScreen.storyboard */; };
 		382FC0D423312AB000709517 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382FC0D323312AB000709517 /* FormView.swift */; };
+		387979512371E9CA009A34A7 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387979502371E9CA009A34A7 /* FormCell.swift */; };
 		387D3D172358A34E00E96E23 /* FormViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3D162358A34E00E96E23 /* FormViewUtils.swift */; };
 		387D3D192358E9D200E96E23 /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387D3D182358E9D200E96E23 /* UserHeader.swift */; };
 		38838D4C23327388000704F0 /* FormInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38838D4B23327388000704F0 /* FormInputView.swift */; };
 		38838D50233285DC000704F0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38838D4F233285DC000704F0 /* ViewExtension.swift */; };
-		38D14EDF2363869F009C12A0 /* FormBaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D14EDE2363869F009C12A0 /* FormBaseInputView.swift */; };
+		38B43A4B23734BFB00A5175A /* FormToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B43A4A23734BFB00A5175A /* FormToggleButtonView.swift */; };
+		38D14EDF2363869F009C12A0 /* FormBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D14EDE2363869F009C12A0 /* FormBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +33,13 @@
 		382FC0CA2331281A00709517 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382FC0CC2331281A00709517 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		382FC0D323312AB000709517 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		387979502371E9CA009A34A7 /* FormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
 		387D3D162358A34E00E96E23 /* FormViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewUtils.swift; sourceTree = "<group>"; };
 		387D3D182358E9D200E96E23 /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
 		38838D4B23327388000704F0 /* FormInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputView.swift; sourceTree = "<group>"; };
 		38838D4F233285DC000704F0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		38D14EDE2363869F009C12A0 /* FormBaseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBaseInputView.swift; sourceTree = "<group>"; };
+		38B43A4A23734BFB00A5175A /* FormToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormToggleButtonView.swift; sourceTree = "<group>"; };
+		38D14EDE2363869F009C12A0 /* FormBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,9 @@
 				38838D4B23327388000704F0 /* FormInputView.swift */,
 				387D3D182358E9D200E96E23 /* UserHeader.swift */,
 				3807FE32235F46E5008032B2 /* FormSelectedOptionView.swift */,
-				38D14EDE2363869F009C12A0 /* FormBaseInputView.swift */,
+				38D14EDE2363869F009C12A0 /* FormBaseView.swift */,
+				387979502371E9CA009A34A7 /* FormCell.swift */,
+				38B43A4A23734BFB00A5175A /* FormToggleButtonView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -182,12 +188,14 @@
 			files = (
 				3807FE33235F46E5008032B2 /* FormSelectedOptionView.swift in Sources */,
 				387D3D172358A34E00E96E23 /* FormViewUtils.swift in Sources */,
+				387979512371E9CA009A34A7 /* FormCell.swift in Sources */,
+				38B43A4B23734BFB00A5175A /* FormToggleButtonView.swift in Sources */,
 				382FC0D423312AB000709517 /* FormView.swift in Sources */,
 				38838D4C23327388000704F0 /* FormInputView.swift in Sources */,
 				382FC0C32331281900709517 /* ViewController.swift in Sources */,
 				382FC0C12331281900709517 /* AppDelegate.swift in Sources */,
 				38838D50233285DC000704F0 /* ViewExtension.swift in Sources */,
-				38D14EDF2363869F009C12A0 /* FormBaseInputView.swift in Sources */,
+				38D14EDF2363869F009C12A0 /* FormBaseView.swift in Sources */,
 				387D3D192358E9D200E96E23 /* UserHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

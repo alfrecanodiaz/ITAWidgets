@@ -109,3 +109,15 @@ extension UIScrollView {
         self.setContentOffset(bottomOffset, animated: animated)
     }
 }
+
+// Used to add subviews to the form view
+extension FormView {
+    
+    func addCell(_ cell: FormCell) {
+        self.stackView.addArrangedSubview(cell.cell())
+    }
+    
+    func insertCell(_ cell: FormCell, at index: Int) {
+        self.stackView.insertArrangedSubview(cell.cell(), at: index)
+    }
+}

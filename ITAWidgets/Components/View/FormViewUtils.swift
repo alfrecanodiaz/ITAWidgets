@@ -149,10 +149,45 @@ struct Layout {
         return constraint
     }
     
+    @discardableResult func height(constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: element,
+                           attribute: .height,
+                           relatedBy: .equal,
+                           toItem: nil,
+                           attribute: .notAnAttribute,
+                           multiplier: 1,
+                           constant: constant)
+        safeSuperview().addConstraint(constraint)
+        return constraint
+    }
+    
+    @discardableResult func width(constant: CGFloat) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: element,
+                                            attribute: .width,
+                                            relatedBy: .equal,
+                                            toItem: nil,
+                                            attribute: .notAnAttribute,
+                                            multiplier: 1,
+                                            constant: constant)
+        safeSuperview().addConstraint(constraint)
+        return constraint
+    }
+    
     func fillSuperview(padding: CGFloat = 0) {
         safeSuperview()
         pinHorizontalEdgesToSuperView(padding: padding)
         pinVerticalEdgesToSuperView(padding: padding)
+    }
+    
+    @discardableResult func centerVerticallyToView(view: UIView) -> NSLayoutConstraint {
+        let constraint = NSLayoutConstraint(item: element,
+                                            attribute: .centerY,
+                                            relatedBy: .equal,
+                                            toItem: view,
+                                            attribute: .centerY,
+                                            multiplier: 1.0, constant: 0)
+        safeSuperview().addConstraint(constraint)
+        return constraint
     }
     
     @discardableResult private func safeSuperview() -> UIView {
