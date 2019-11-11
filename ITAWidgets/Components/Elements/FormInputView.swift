@@ -24,18 +24,22 @@ class FormInputView: FormBaseView {
         let textField = UITextField()
         textField.textColor = .orange
         textField.font = UIFont.systemFont(ofSize: 32)
+        textField.delegate = self
         return textField
     }()
     
     var labelError: UILabel?
     var iconError: UIButton?
-    var isValid: Bool = true
     
-    convenience public init() {
+    var isValid: Bool = true
+    var maxLength: Int?
+    var onTextChange: ((UITextField, NSRange, String) -> Bool)?
+    
+    convenience public init(type: FormInputType) {
         self.init(frame: CGRect.zero)
         
         /// setup view
-        self.setup()
+        self.setup(type: type)
     }
     
     private override init(frame: CGRect) {
@@ -47,34 +51,45 @@ class FormInputView: FormBaseView {
         super.init(coder: aDecoder)
     }
     
-    private func setup() {
+    private func setup(type: FormInputType) {
         /// add title label to superview
         self.addSubview(self.labelTitle)
         self.labelTitle.layout.pinLeadingToSuperview(constant: 0)
         self.labelTitle.layout.pinTrailingToSuperview(constant: 0)
         self.labelTitle.layout.pinTopToSuperview(constant: 0)
         
-        /// add action button to superview
-        self.addSubview(self.action)
-        self.action.layout.pinTopToSuperview(constant: 20)
-        self.action.layout.pinTrailingToSuperview(constant: 0)
-        
-        /// add currency label to superview
-        self.addSubview(self.labelCurrency)
-        self.labelCurrency.layout.pinLeadingToSuperview(constant: 0)
-        self.labelCurrency.layout.pinTopToView(view: self.labelTitle, constant: 16)
+        if type == .amount {
+            /// add action button to superview
+            self.addSubview(self.action)
+            self.action.layout.pinTopToSuperview(constant: 20)
+            self.action.layout.pinTrailingToSuperview(constant: 0)
+            
+            /// add currency label to superview
+            self.addSubview(self.labelCurrency)
+            self.labelCurrency.layout.pinLeadingToSuperview(constant: 0)
+            self.labelCurrency.layout.pinTopToView(view: self.labelTitle, constant: 16)
+        }
         
         /// add text field to superview
         self.addSubview(self.textField)
-        self.textField.layout.pinLeadingToView(view: self.labelCurrency, constant: 8)
-        self.textField.layout.pinTrailingToView(view: self.action, constant: 8)
-        self.textField.layout.pinTopToView(view: self.labelTitle, constant: 16)
+        
+        if type == .default {
+            self.textField.layout.pinLeadingToSuperview(constant: 0)
+            self.textField.layout.pinTrailingToSuperview(constant: 0)
+            self.textField.layout.pinTopToView(view: self.labelTitle, constant: 8)
+        } else {
+            self.textField.layout.pinLeadingToView(view: self.labelCurrency, constant: 8)
+            self.textField.layout.pinTrailingToView(view: self.action, constant: 8)
+            self.textField.layout.pinTopToView(view: self.labelTitle, constant: 16)
+        }
         
         /// add bottom border
         self.addBorder(pinTopToView: self.textField, withMargin: 12)
         
         /// pin currency label to border
-        self.labelCurrency.layout.pinBottomToView(view: self.border!, constant: 0)
+        if type == .amount {
+            self.labelCurrency.layout.pinBottomToView(view: self.border!, constant: 0)
+        }
     }
     
     func setError(_ message: String?) {
@@ -126,6 +141,21 @@ class FormInputView: FormBaseView {
             self.labelTitle.textColor = .gray
             self.border?.backgroundColor = .gray
         }
+    }
+}
+
+extension FormInputView: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text, let maxLength = self.maxLength {
+            let newLength = text.count + string.count - range.length
+            
+            if newLength > maxLength {
+                return false
+            }
+        }
+        
+        return self.onTextChange?(textField, range, string) ?? true
     }
 }
 

@@ -113,11 +113,15 @@ extension UIScrollView {
 // Used to add subviews to the form view
 extension FormView {
     
-    func addCell(_ cell: FormCell) {
-        self.stackView.addArrangedSubview(cell.cell())
+    @discardableResult func addCell(_ cell: FormCell) -> FormBaseView {
+        let element = cell.cell()
+        self.stackView.addArrangedSubview(element)
+        return element
     }
     
-    func insertCell(_ cell: FormCell, at index: Int) {
-        self.stackView.insertArrangedSubview(cell.cell(), at: index)
+    @discardableResult func insertCell(_ cell: FormCell, at index: Int) -> FormBaseView {
+        let element = cell.cell()
+        self.stackView.insertArrangedSubview(element, at: index)
+        return element
     }
 }
