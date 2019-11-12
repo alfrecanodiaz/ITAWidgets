@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             input.tag = 500
             input.onTouch = {
                 input.setError(input.isValid ? "No hay saldo suficiente en la cuenta elegida" : nil)
-//                self.replace()
+//                self.replaceFirstCell()
 //                if let subview = self.formView.viewWithTag(700) {
 //                    self.formView.stackView.removeArrangedSubview(subview)
 //                }
@@ -78,7 +78,6 @@ class ViewController: UIViewController {
             toggle.leftOption.data = "email"
             toggle.rightOption.data = "sms"
             toggle.onChange = { data in
-//                selectedView.isHidden = !selectedView.isHidden
                 print(data as! String)
             }
             return toggle
@@ -125,7 +124,7 @@ class ViewController: UIViewController {
         formView.scrollToItem(index: 11)
     }
     
-    func replace() {
+    func replaceFirstCell() {
         self.formView.stackView.subviews.first?.removeFromSuperview()
         let selectedView = self.formView.insertCell(FormCell(for: {
             let option: FormSelectedOptionView = FormSelectedOptionView(model: String())

@@ -90,21 +90,21 @@
 		382FC0D223312A9600709517 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				38D14EDA23638654009C12A0 /* View */,
+				38D14EDA23638654009C12A0 /* Form */,
 				38D14EDB2363865F009C12A0 /* Elements */,
 				389CBA2D2379A8040009153B /* ObjectExtension.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		38D14EDA23638654009C12A0 /* View */ = {
+		38D14EDA23638654009C12A0 /* Form */ = {
 			isa = PBXGroup;
 			children = (
 				382FC0D323312AB000709517 /* FormView.swift */,
 				387D3D162358A34E00E96E23 /* FormViewUtils.swift */,
 				38838D4F233285DC000704F0 /* ViewExtension.swift */,
 			);
-			path = View;
+			path = Form;
 			sourceTree = "<group>";
 		};
 		38D14EDB2363865F009C12A0 /* Elements */ = {

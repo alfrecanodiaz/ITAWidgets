@@ -110,7 +110,7 @@ extension UIScrollView {
     }
 }
 
-// Used to add subviews to the form view
+// Used to manipulate subviews to the form view
 extension FormView {
     
     @discardableResult func addCell(_ cell: FormCell) -> FormBaseView {
@@ -123,5 +123,31 @@ extension FormView {
         let element = cell.cell()
         self.stackView.insertArrangedSubview(element, at: index)
         return element
+    }
+    
+    func hideView(tag: Int) {
+        if let subview = self.stackView.viewWithTag(tag) {
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0.0,
+                options: [.curveEaseOut],
+                animations: {
+                    subview.isHidden = true
+                    subview.alpha = 0.0
+            })
+        }
+    }
+    
+    func showView(tag: Int) {
+        if let subview = self.stackView.viewWithTag(tag) {
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0.0,
+                options: [.curveEaseIn],
+                animations: {
+                    subview.isHidden = false
+                    subview.alpha = 1.0
+            })
+        }
     }
 }
