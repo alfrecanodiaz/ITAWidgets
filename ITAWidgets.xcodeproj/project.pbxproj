@@ -22,6 +22,7 @@
 		389CBA2E2379A8040009153B /* ObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CBA2D2379A8040009153B /* ObjectExtension.swift */; };
 		38B43A4B23734BFB00A5175A /* FormToggleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B43A4A23734BFB00A5175A /* FormToggleButtonView.swift */; };
 		38D14EDF2363869F009C12A0 /* FormBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D14EDE2363869F009C12A0 /* FormBaseView.swift */; };
+		38DC491C237D8BA000694D5B /* FormSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC491B237D8BA000694D5B /* FormSummaryView.swift */; };
 		38EF07E32375D8DB00569671 /* FormSubmitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EF07E22375D8DB00569671 /* FormSubmitButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		389CBA2D2379A8040009153B /* ObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectExtension.swift; sourceTree = "<group>"; };
 		38B43A4A23734BFB00A5175A /* FormToggleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormToggleButtonView.swift; sourceTree = "<group>"; };
 		38D14EDE2363869F009C12A0 /* FormBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBaseView.swift; sourceTree = "<group>"; };
+		38DC491B237D8BA000694D5B /* FormSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSummaryView.swift; sourceTree = "<group>"; };
 		38EF07E22375D8DB00569671 /* FormSubmitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSubmitButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				387979502371E9CA009A34A7 /* FormCell.swift */,
 				38B43A4A23734BFB00A5175A /* FormToggleButtonView.swift */,
 				38EF07E22375D8DB00569671 /* FormSubmitButtonView.swift */,
+				38DC491B237D8BA000694D5B /* FormSummaryView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3807FE33235F46E5008032B2 /* FormSelectedOptionView.swift in Sources */,
+				38DC491C237D8BA000694D5B /* FormSummaryView.swift in Sources */,
 				387D3D172358A34E00E96E23 /* FormViewUtils.swift in Sources */,
 				387979512371E9CA009A34A7 /* FormCell.swift in Sources */,
 				38B43A4B23734BFB00A5175A /* FormToggleButtonView.swift in Sources */,

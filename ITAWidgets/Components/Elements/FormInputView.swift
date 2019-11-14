@@ -58,16 +58,18 @@ class FormInputView: FormBaseView {
         self.labelTitle.layout.pinTrailingToSuperview(constant: 0)
         self.labelTitle.layout.pinTopToSuperview(constant: 0)
         
+        /// add action button to superview
+        self.addSubview(self.action)
+        self.action.layout.pinTopToSuperview(constant: 20)
+        self.action.layout.pinTrailingToSuperview(constant: 0)
+        
         if type == .amount {
-            /// add action button to superview
-            self.addSubview(self.action)
-            self.action.layout.pinTopToSuperview(constant: 20)
-            self.action.layout.pinTrailingToSuperview(constant: 0)
-            
             /// add currency label to superview
             self.addSubview(self.labelCurrency)
             self.labelCurrency.layout.pinLeadingToSuperview(constant: 0)
             self.labelCurrency.layout.pinTopToView(view: self.labelTitle, constant: 16)
+        } else {
+            self.action.isHidden = true
         }
         
         /// add text field to superview
